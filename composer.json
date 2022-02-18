@@ -1,0 +1,17 @@
+{
+    "name": "hongyejia\/laravel-cors",
+    "description": "laravel Cors middleware",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hongye",
+            "email": "aqm@live.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hongyejia\\LaravelCors\\": "src"
+        }
+    }
+}
