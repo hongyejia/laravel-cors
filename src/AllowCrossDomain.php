@@ -22,7 +22,7 @@ class AllowCrossDomain
         $this->cookieDomain = config('cors.access_control_allow_origin', 'localhost');
 
     }
-    
+
 
     /**
      * 处理传入的参数
@@ -34,7 +34,7 @@ class AllowCrossDomain
      */
     public function handle($request, Closure $next)
     {
-    	
+
     	$response = $next($request);
 
         $header = $this->header;
@@ -48,12 +48,12 @@ class AllowCrossDomain
                 $header['Access-Control-Allow-Origin'] = '*';
             }
         }
-        
-        foreach ($header as $key => $value) $response->header($key,$value);
+
+        foreach ($header as $key => $value) $response->headers->set($key,$value);
 
         return $response;
     }
-    
+
 }
 
 
